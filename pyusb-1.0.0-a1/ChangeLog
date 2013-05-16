@@ -1,0 +1,700 @@
+2010-12-29 17:22  wander_lairson
+
+	* docs/tutorial.txt: Tutorial update.
+
+2010-12-29 17:11  wander_lairson
+
+	* usb/util.py: Documentation update.
+
+2010-12-24 22:08  wander_lairson
+
+	* usb/legacy.py: Finish implementation of 0.4 API emulation.
+
+2010-12-24 21:53  wander_lairson
+
+	* tests/test_control.py, usb/util.py: Implemented util.get_string
+	  function.
+
+2010-12-24 20:57  wander_lairson
+
+	* README, ReleaseNotes.txt, TODO: Documentation update.
+
+2010-12-24 20:29  wander_lairson
+
+	* tests/test_control.py, tests/test_integration.py, usb/control.py:
+	  Implemented standard control requests.
+
+2010-12-17 13:30  wander_lairson
+
+	* usb/core.py: Removed get_interface_altsetting function from
+	  Device interface.
+
+2010-12-15 18:18  wander_lairson
+
+	* usb/core.py, usb/legacy.py: Fixed some pychecker warnings.
+
+2010-12-15 17:43  wander_lairson
+
+	* tests/test_backend.py, tests/test_integration.py, tests/utils.py,
+	  usb/_debug.py, usb/backend/libusb01.py, usb/backend/libusb10.py,
+	  usb/backend/openusb.py, usb/core.py: Fixed pyflakes warnings.
+
+2010-12-14 21:55  wander_lairson
+
+	* tests/test_integration.py, usb/backend/__init__.py,
+	  usb/backend/libusb01.py, usb/backend/libusb10.py,
+	  usb/backend/openusb.py, usb/core.py: Implemented get_cofiguration
+	  on backends. Now Device issue a get_configuration request when a
+	  configuration is not set.
+
+2010-12-14 17:39  wander_lairson
+
+	* docs/tutorial.txt: Update documentation with minimum Python
+	  version info.
+
+2010-12-14 17:32  wander_lairson
+
+	* README, setup.py: Dropped Python 2.3 support.
+
+2010-12-14 17:26  wander_lairson
+
+	* LICENSE, setup.py, tests/devinfo.py, tests/test_backend.py,
+	  tests/test_find.py, tests/test_integration.py,
+	  tests/test_util.py, tests/testall.py, tests/utils.py,
+	  usb/__init__.py, usb/_debug.py, usb/_interop.py,
+	  usb/backend/__init__.py, usb/backend/libusb01.py,
+	  usb/backend/libusb10.py, usb/backend/openusb.py, usb/core.py,
+	  usb/legacy.py, usb/util.py: Update year copyright information.
+
+2010-12-14 17:12  wander_lairson
+
+	* tests/test_backend.py, tests/test_integration.py,
+	  tests/test_util.py, tests/utils.py: Fixed to not fail the tests
+	  when the test device is not connected.
+
+2010-12-12 04:27  wander_lairson
+
+	* tests/test_backend.py, tests/test_integration.py, tests/utils.py,
+	  usb/_interop.py, usb/backend/libusb01.py,
+	  usb/backend/libusb10.py, usb/core.py: Fixed python3 support.
+
+2010-12-09 18:30  wander_lairson
+
+	* usb/core.py: Minor code refactoring.
+
+2010-09-06 16:20  wander_lairson
+
+	* ACKNOWLEDGEMENTS, README, tests/test_util.py, usb/core.py: Fixed
+	  docs. Stronger checking of find_descriptor.
+
+2010-07-30 23:13  wander_lairson
+
+	* docs/tutorial.txt, usb/backend/libusb01.py,
+	  usb/backend/openusb.py, usb/util.py: Docs update. RequestType bit
+	  field now can optionally be ORed with constants in util module.
+	  Fixed libusb01 backend to find the library in Ubuntu. Fixed
+	  openusb backend (thanks to Cris Wolf)
+
+2010-07-30 22:41  wander_lairson
+
+	* tests/pic18f4550/Microchip Solutions/IMPORTANT README.txt,
+	  tests/pic18f4550/Microchip Solutions/Microchip,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/Benchmark.c,
+	  tests/test_backend.py, tests/test_integration.py: Removed reset
+	  call from regression tests because of portability reasons.
+	  Removed from sources the Microchip USB stack. Changed test
+	  firmware to reset control buffer upon a set_configuration.
+
+2010-07-16 02:43  wander_lairson
+
+	* tests/test_backend.py, tests/test_integration.py, tests/utils.py,
+	  usb/core.py: Fixed bug in the reset() method. Test hardware
+	  detection changed to use supplied backend.
+
+2010-07-10 22:27  wander_lairson
+
+	* tests/arm_str9, tests/pic18f4550, tests/pic18f4550/Microchip
+	  Solutions, tests/pic18f4550/Microchip Solutions/IMPORTANT
+	  README.txt, tests/pic18f4550/Microchip Solutions/Microchip,
+	  tests/pic18f4550/Microchip Solutions/Microchip/Include,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/Compiler.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/GenericTypeDefs.h,
+	  tests/pic18f4550/Microchip Solutions/Microchip/Include/USB,
+	  tests/pic18f4550/Microchip Solutions/Microchip/Include/USB/usb.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/USB/usb_ch9.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/USB/usb_common.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/USB/usb_device.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/USB/usb_function_generic.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/USB/usb_hal.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/USB/usb_hal_pic18.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/USB/usb_hal_pic24.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/Microchip/Include/USB/usb_hal_pic32.h,
+	  tests/pic18f4550/Microchip Solutions/Microchip/USB,
+	  tests/pic18f4550/Microchip Solutions/Microchip/USB/Generic Device
+	  Driver, tests/pic18f4550/Microchip
+	  Solutions/Microchip/USB/Generic Device
+	  Driver/usb_function_generic.c, tests/pic18f4550/Microchip
+	  Solutions/Microchip/USB/usb_device.c, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/BDT_transfer.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/Benchmark.c,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/Benchmark.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/CleanUp.bat,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - Low Pin Count
+	  USB Development Kit.h, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - PIC18F46J50
+	  PIM.h, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - PIC18F87J50
+	  PIM.h, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - PIC24F Starter
+	  Kit.h, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - PIC24FJ256GB110
+	  PIM.h, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - PIC24FJ64GB002
+	  BreadBoard.h, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - PIC24FJ64GB004
+	  PIM.h, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - PIC32 USB
+	  Starter Kit.h, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - PIC32MX460F512L
+	  PIM.h, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile - PICDEM FSUSB.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/HardwareProfile.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/Objects,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/Objects/USB Device - WinUSB -
+	  High Bandwidth - C32, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PIC24 HID Bootloader Remapping.s,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PicFWCommands.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C18_LowPinCountDevKit.mcp,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C18_LowPinCountDevKit.mcw,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C18_P18F46J50_PIM.mcp,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C18_P18F46J50_PIM.mcw,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C18_P18F87J50_PIM.mcp,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C18_P18F87J50_PIM.mcw,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C18_PICDEM_FSUSB.mcp,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C18_PICDEM_FSUSB.mcs,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C18_PICDEM_FSUSB.mcw,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C30.mcp,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C30.mcw,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C32_P32MX460F512L_PIM.mcp,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C32_P32MX460F512L_PIM.mcw,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C32_StarterKit.mcp,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C32_StarterKit.mcs,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/PyUSB_C32_StarterKit.mcw,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/main.c,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/p24FJ256GB110 - HID
+	  Bootloader.gld, tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/procdefs.ld.boot,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/CompilerSettings.txt,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/PyUSB.C18.FSUSB.lkr,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/PyUSB.C18.FSUSB.sln,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/PyUSB.C18.FSUSB.vcproj,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/PyUSB.C30.sln,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/PyUSB.C30.vcproj,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/Utility,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/Utility/MplabMake.exe,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/Utility/RegexClean.exe,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/_vcDummy.cpp,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/clean.cmd,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/projects/VStudio/p24FJ64GB002.gld,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/rm18f14k50.lkr,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/rm18f4550 - HID Bootload.lkr,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/rm18f4550 - MCHPUSB Bootload.lkr,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/rm18f46j50_g.lkr,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/rm18f87j50.lkr,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/superClean.bat,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/usb_config.h,
+	  tests/pic18f4550/Microchip
+	  Solutions/TestFirmware/Firmware/usb_descriptors.c,
+	  tests/pic18f4550/README, tests/test_backend.py,
+	  tests/test_integration.py: New test firmware based on the
+	  libusbdotnet benchmark firmware. Thank you Travis for allow me
+	  use your code.
+
+2010-07-10 22:22  wander_lairson
+
+	* tests/pic18f4550: Removed old PIC test firmware.
+
+2010-04-16 14:52  wander_lairson
+
+	* ReleaseNotes.txt: * Minor fix in the ReleaseNotes file
+
+2010-04-16 14:47  wander_lairson
+
+	* ACKNOWLEDGEMENTS, MANIFEST.in, README, ReleaseNotes.txt, TODO,
+	  setup.py: * Minor docs changes
+
+2010-04-13 19:59  wander_lairson
+
+	* tests/test_backend.py, tests/test_find.py,
+	  tests/test_integration.py, tests/test_util.py, tests/testall.py,
+	  tests/utils.py, usb/__init__.py, usb/_debug.py, usb/_interop.py,
+	  usb/backend/libusb01.py, usb/backend/libusb10.py,
+	  usb/backend/openusb.py, usb/core.py: * Included trace of backend
+	  calls.
+	  * Test cases now can be runned individually.
+
+2010-04-12 14:28  wander_lairson
+
+	* usb/backend/libusb01.py, usb/backend/libusb10.py: * cygwin
+	  compatibility issues fixed
+
+2010-04-07 23:12  wander_lairson
+
+	* tests/testall.py: * Changed testall script to only add usb
+	  package to python path when we are at pyusb source tree
+
+2010-04-06 14:08  wander_lairson
+
+	* usb/backend/libusb01.py, usb/backend/libusb10.py: * Cygwin
+	  support
+
+2010-04-06 14:02  wander_lairson
+
+	* TODO, docs/tutorial.txt: * Docs update
+
+2010-04-05 21:45  wander_lairson
+
+	* tests/test_backend.py, tests/test_integration.py, tests/utils.py,
+	  usb/__init__.py, usb/_interop.py, usb/backend/libusb01.py,
+	  usb/backend/libusb10.py, usb/backend/openusb.py, usb/core.py: *
+	  Refactored _interop module
+	  * Added logging support facility
+
+2010-04-05 13:45  wander_lairson
+
+	* ACKNOWLEDGEMENTS, usb/backend/libusb01.py,
+	  usb/backend/libusb10.py: * Implemented support for FreeBSD in the
+	  libusb 1.0 backend. Thanks to Xiaofan Chen.
+	  * Implemented partial support for libusb 1.0 Windows backend.
+	  Thanks to Xiaofan Chen.
+
+2010-02-11 06:51  wander_lairson
+
+	* docs/tutorial.txt: Fixed spelling errors in the tutorial.
+
+2010-02-10 06:57  wander_lairson
+
+	* usb/core.py: Fixed some minor spelling errors.
+
+2010-02-10 05:46  wander_lairson
+
+	* usb/_interop.py, usb/legacy.py: Fixed several Python 2.3
+	  compatibility issues in the legacy module.
+
+2010-02-06 07:09  wander_lairson
+
+	* TODO, usb/core.py: * TODO list updated.
+	  * Fixed import in the find function.
+
+2010-02-06 05:38  wander_lairson
+
+	* LICENSE: License update
+
+2010-02-06 05:35  wander_lairson
+
+	* tests/devinfo.py, tests/test_backend.py, tests/test_find.py,
+	  tests/test_integration.py, tests/test_util.py, tests/testall.py,
+	  tests/utils.py, usb/_interop.py: Updated license information for
+	  test scripts.
+
+2010-02-06 04:41  wander_lairson
+
+	* docs/tutorial.txt: Fixed Python version information in the
+	  tutorial.
+
+2010-02-05 10:30  wander_lairson
+
+	* README, TODO, usb/__init__.py, usb/core.py, usb/legacy.py,
+	  usb/util.py: Damn it! 10 secs after commiting the code and
+	  dropping Python 2.3 and 2.4, I got an idea about how to solve the
+	  imports problem without the drop... Back with 2.3 and 2.4
+	  versions again...
+
+2010-02-05 10:08  wander_lairson
+
+	* LICENSE, README, TODO, docs/tutorial.txt, setup.py,
+	  tests/utils.py, usb/__init__.py, usb/_interop.py,
+	  usb/backend/__init__.py, usb/backend/libusb01.py,
+	  usb/backend/libusb10.py, usb/backend/openusb.py, usb/core.py,
+	  usb/legacy.py, usb/util.py: * [1.0] License update.
+	  * [1.0] Dropped support for Python version < 2.5.
+	  * [1.0] Fixed problems to work for Python 2 and Python 3.
+
+2010-02-04 00:29  wander_lairson
+
+	* ACKNOWLEDGEMENTS, LICENSE, MANIFEST.in, README, TODO, setup.py,
+	  usb/backend/libusb01.py: * [1.0] Added README, LICENSE, TODO and
+	  ACKNOWLEDGEMENTS files.
+	  * [1.0] Version update.
+	  * [0.1] Applied patch to make getString returning a Python string
+	  when langid != -1. By Tormod Volden.
+
+2010-02-03 08:14  wander_lairson
+
+	* usb/backend/libusb01.py: * Fixed issue #2945033.
+
+2010-02-02 00:18  wander_lairson
+
+	* docs/tutorial.txt, usb/core.py: * Fixed ctrl_transfer issue when
+	  we don't have a payload buffer.
+	  * Fixed tutorial example spelling...
+
+2009-12-22 17:05  wander_lairson
+
+	* usb/legacy.py: * Applied patch 2905610.
+
+2009-10-15 12:46  wander_lairson
+
+	* docs/tutorial.txt: * Tutorial update.
+
+2009-10-09 20:13  wander_lairson
+
+	* docs/tutorial.rst, docs/tutorial.txt: * Tutorial update.
+
+2009-09-24 19:48  wander_lairson
+
+	* docs/tutorial.rst, usb/backend/libusb10.py, usb/core.py: * Better
+	  error description for libusb 1.0 backend.
+	  * Implemented get_interface_altsetting method.
+	  * Tutorial update.
+
+2009-09-24 14:14  wander_lairson
+
+	* tests/utils.py, usb/_interop.py, usb/core.py: * Fixes for Python
+	  2.3 interoperability
+
+2009-09-24 13:08  wander_lairson
+
+	* tests/test_backend.py, tests/test_integration.py, tests/utils.py,
+	  usb/_interop.py, usb/backend/__init__.py,
+	  usb/backend/libusb01.py, usb/backend/libusb10.py,
+	  usb/backend/openusb.py, usb/core.py, usb/util.py: * Python 3
+	  compatibility fixes
+	  * Minor improvements
+	  * Code cleanup
+
+2009-09-23 18:37  wander_lairson
+
+	* docs/tutorial.rst: * Tutorial update.
+
+2009-09-21 19:38  wander_lairson
+
+	* docs/tutorial, docs/tutorial.rst: * Minor docs and messages
+	  improvements.
+	  * Tutorial update.
+
+2009-09-19 00:23  wander_lairson
+
+	* tests/test_integration.py, tests/testall.py,
+	  usb/backend/libusb01.py, usb/backend/libusb10.py,
+	  usb/backend/openusb.py, usb/core.py, usb/util.py: * Fixed issue
+	  #2860940. Thanks to Nicholas Wheeler.
+	  * Implementation of the get_active_configuration() method
+	  * Lots of other bug fixes
+
+2009-09-17 20:28  wander_lairson
+
+	* docs/tutorial, docs/tutorial/tutorial.rst: * PyUSB 1.0 tutorial
+	  (incomplete).
+
+2009-09-14 19:48  wander_lairson
+
+	* docs, setup.py, tests/test_util.py, usb/__init__.py, usb/core.py,
+	  usb/legacy.py, usb/util.py: * Update version for 0.x branch.
+	  * Included information for mailing in the 0.x branch.
+	  * Included tests for find_descriptor and build_request_type
+	  functions.
+	  * Bug fixes.
+	  * Update legacy module.
+
+2009-09-11 19:53  wander_lairson
+
+	* tests/backendtest.py, tests/fakebackend.py,
+	  tests/fakebackendtest.py, tests/inttest.py, tests/test.py,
+	  tests/test_backend.py, tests/test_find.py,
+	  tests/test_integration.py, tests/test_util.py, tests/testall.py,
+	  tests/utiltest.py, usb/core.py, usb/util.py: * Code refactoring
+
+2009-09-04 20:25  wander_lairson
+
+	* usb/util.py: * Changed name of the function from
+	  release_resources to dispose_resources
+
+2009-09-04 20:12  wander_lairson
+
+	* tests/backend_test.py, tests/backendtest.py, tests/core_test.py,
+	  tests/device_info.py, tests/devinfo.py, tests/fakebackend.py,
+	  tests/fakebackendtest.py, tests/inttest.py, tests/test.py,
+	  tests/util_test.py, tests/utils.py, tests/utiltest.py,
+	  usb/backend/__init__.py, usb/core.py, usb/util.py: * Refactoring
+	  of core module
+	  * Refactoring of tests
+	  * Initial implementation of a fake backend for tests
+	  * New functions in util module
+	  * IBackend exported in usb.backend
+
+2009-09-03 19:33  wander_lairson
+
+	* tests/backend_test.py, tests/core_test.py,
+	  usb/backend/__init__.py, usb/backend/libusb01.py,
+	  usb/backend/libusb10.py, usb/backend/openusb.py, usb/core.py: *
+	  Documentation improvement.
+	  * Automatic predefined backend selection in usb.core.find
+	  function.
+	  * Predefined backends return None in get_backend function when
+	  the underline library is not available.
+	  * Tests include backends testing only when they are available.
+
+2009-09-03 00:43  wander_lairson
+
+	* tests/backend_test.py, tests/core_test.py,
+	  usb/backend/libusb01.py, usb/backend/libusb10.py,
+	  usb/backend/openusb.py: * Fixes to work under Windows
+
+2009-09-02 14:41  wander_lairson
+
+	* usb/backend/__init__.py, usb/backend/libusb01.py,
+	  usb/backend/libusb10.py, usb/backend/openusb.py, usb/core.py,
+	  usb/legacy.py, usb/util.py: * Documentation improvement
+
+2009-09-02 01:15  wander_lairson
+
+	* tests/backend_test.py, tests/core_test.py, tests/utils.py,
+	  usb/backend/libusb01.py, usb/core.py: * Bug fixes
+
+2009-09-01 20:03  wander_lairson
+
+	* usb/backend/__init__.py: * Backend documentation improvement.
+
+2009-08-28 10:55  wander_lairson
+
+	* usb/backend/__init__.py: * Documentation improvement
+
+2009-08-25 19:56  wander_lairson
+
+	* tests/backend_test.py, tests/core_test.py, usb/core.py,
+	  usb/util.py: * Code refactoring
+	  * Documentation improved
+	  * Added default_timeout property to Device class
+	  * Changed policy to determine default configuration and interface
+	  values for
+	  the methods of the Device class (see Device documentation).
+	  * Included new function in the util module to build the
+	  bmRequetType field of the control requests.
+
+2009-08-25 11:40  wander_lairson
+
+	* tests/backend_test.py, tests/core_test.py, tests/utils.py: *
+	  Refactoring of tests
+	  * Write more tests for core
+
+2009-08-24 23:36  wander_lairson
+
+	* tests/core_test.py, usb/core.py: * Fix some issues in the core
+	  test module
+
+2009-08-24 19:50  wander_lairson
+
+	* tests/backend_test.py, tests/core_test.py, tests/test.py,
+	  tests/util_test.py: * Draft core test cases
+
+2009-08-24 14:06  wander_lairson
+
+	* tests/backend_test.py: * Some syntax tweaks in the backend_test
+	  module
+
+2009-08-24 12:29  wander_lairson
+
+	* tests/backend_test.py, tests/test.py, tests/util_test.py: *
+	  Included util test case
+
+2009-08-22 21:01  wander_lairson
+
+	* tests/backend_test.py, tests/device_info.py, tests/test.py,
+	  usb/backend/libusb01.py, usb/backend/libusb10.py,
+	  usb/backend/openusb.py, usb/core.py: * Included backend test case
+	  (v1.0)
+	  * Backend instance now is get through get_backend() function
+	  (v1.0)
+	  * Fixed some issues in libusb01 backend (v1.0)
+	  * Added support to compilation to macports (v0.4). Thanks to
+	  rossetti.
+
+2009-08-18 23:18  wander_lairson
+
+	* usb/backend/libusb01.py, usb/backend/libusb10.py,
+	  usb/backend/openusb.py: * Fix: buffer type convertions in the
+	  backends. Thanks to Thomas Reitmayr to point out this problem.
+
+2009-08-17 23:32  wander_lairson
+
+	* usb/backend/libusb10.py, usb/core.py, usb/util.py: * Patch
+	  '2837638' applied.
+	  * Patch '2837639' applied.
+	  * Patch '2837642' applied.
+	  * Patch '2837643' applied.
+	  * Patch '2837646' applied.
+	  * Patch '2837648' applied.
+	  * Patch '2837650' applied.
+	  * Patch '2837651' applied.
+	  * Patch '2837652' applied.
+	  * Patch '2837653' applied.
+	  * Patch '2837654' applied.
+
+2009-08-05 23:00  wander_lairson
+
+	* usb/backend/libusb10.py: * Fixed bug 2832279
+	  * Fixed bug 2832277
+	  * Fixed bug 2832276
+
+2009-07-27 12:58  wander_lairson
+
+	* usb/core.py: * Fixed some minor issues in usb.core.find()
+
+2009-07-27 11:15  wander_lairson
+
+	* usb/backend/libusb10.py, usb/core.py: * Applied patch 2827110
+	  * Applied patch 2827111
+
+2009-06-12 16:56  wander_lairson
+
+	* tests/pic18f4550, tests/pic18f4550/18f87j50.lkr,
+	  tests/pic18f4550/CleanUp.bat, tests/pic18f4550/MCHPUSB.mcp,
+	  tests/pic18f4550/MCHPUSB.mcs, tests/pic18f4550/MCHPUSB.mcw,
+	  tests/pic18f4550/MCHPUSB.mptags, tests/pic18f4550/MCHPUSB.tagsrc,
+	  tests/pic18f4550/_output, tests/pic18f4550/autofiles,
+	  tests/pic18f4550/autofiles/usbcfg.h,
+	  tests/pic18f4550/autofiles/usbdsc.c,
+	  tests/pic18f4550/autofiles/usbdsc.h, tests/pic18f4550/io_cfg.h,
+	  tests/pic18f4550/main.c, tests/pic18f4550/rm18f4550.lkr,
+	  tests/pic18f4550/system, tests/pic18f4550/system/interrupt,
+	  tests/pic18f4550/system/interrupt/interrupt.c,
+	  tests/pic18f4550/system/interrupt/interrupt.h,
+	  tests/pic18f4550/system/typedefs.h, tests/pic18f4550/system/usb,
+	  tests/pic18f4550/system/usb/_output,
+	  tests/pic18f4550/system/usb/class,
+	  tests/pic18f4550/system/usb/class/pyusb,
+	  tests/pic18f4550/system/usb/class/pyusb/pyusb.c,
+	  tests/pic18f4550/system/usb/class/pyusb/pyusb.h,
+	  tests/pic18f4550/system/usb/usb.h,
+	  tests/pic18f4550/system/usb/usb9,
+	  tests/pic18f4550/system/usb/usb9/usb9.c,
+	  tests/pic18f4550/system/usb/usb9/usb9.h,
+	  tests/pic18f4550/system/usb/usb_compile_time_validation.h,
+	  tests/pic18f4550/system/usb/usbctrltrf,
+	  tests/pic18f4550/system/usb/usbctrltrf/usbctrltrf.c,
+	  tests/pic18f4550/system/usb/usbctrltrf/usbctrltrf.h,
+	  tests/pic18f4550/system/usb/usbdefs,
+	  tests/pic18f4550/system/usb/usbdefs/usbdefs_ep0_buff.h,
+	  tests/pic18f4550/system/usb/usbdefs/usbdefs_std_dsc.h,
+	  tests/pic18f4550/system/usb/usbdrv,
+	  tests/pic18f4550/system/usb/usbdrv/usbdrv.c,
+	  tests/pic18f4550/system/usb/usbdrv/usbdrv.h,
+	  tests/pic18f4550/system/usb/usbmmap.c,
+	  tests/pic18f4550/system/usb/usbmmap.h: * PIC 184550 Test FW
+	  complete.
+	  * 0.x regression tests scripts complete.
+
+2009-05-08 10:35  wander_lairson
+
+	* usb/backend/__init__.py, usb/backend/libusb01.py,
+	  usb/backend/libusb10.py, usb/backend/openusb.py, usb/core.py,
+	  usb/legacy.py, usb/util.py: * Separated write and read endpoint
+	  methods
+	  * Transfer type in automatic inferred in the Device object
+	  * Documentation for util module
+	  * libusb backend modules refactored
+	  * Initial openusb implementation
+
+2009-05-05 11:50  wander_lairson
+
+	* usb/backend/libusb10.py: * Initial implementation of libusb 1.0
+	  backend
+
+2009-04-30 10:49  wander_lairson
+
+	* usb, usb/__init__.py, usb/backend, usb/backend/__init__.py,
+	  usb/backend/libusb01.py, usb/core.py, usb/legacy.py, usb/util.py:
+	  * Initial PyUSB 1.0 implementation
+
+2009-04-29 23:17  wander_lairson
+
+	* src, tests/arm_str9, tests/fw: * Moved 0.x version from cvs to
+	  svn
+	  * ARM Test FW folder renamed
+
+2008-04-16 22:50  wander_lairson
+
+	* ., src, tests, tests/fw, tests/fw/LST, tests/fw/OBJ,
+	  tests/fw/PyUSB_TestFw.Opt, tests/fw/PyUSB_TestFw.Uv2,
+	  tests/fw/src, tests/fw/src/91x_it.c, tests/fw/src/STR91x.s,
+	  tests/fw/src/main.c, tests/fw/src/ring_buffer.c,
+	  tests/fw/src/ring_buffer.h, tests/fw/src/startup_gcc.s,
+	  tests/fw/src/usb_conf.h, tests/fw/src/usb_desc.c,
+	  tests/fw/src/usb_desc.h, tests/fw/src/usb_endp.c,
+	  tests/fw/src/usb_istr.c, tests/fw/src/usb_prop.c,
+	  tests/fw/src/usb_prop.h, tests/fw/src/usb_pwr.c,
+	  tests/fw/src/usb_pwr.h, tests/fw/src/util.c, tests/fw/src/util.h:
+
