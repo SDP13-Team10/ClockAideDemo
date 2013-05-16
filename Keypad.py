@@ -9,17 +9,18 @@ class keypad:
 	def __init__(self):
 		global kpad
 		# global keypadLocation global BaudRate
-		kpad = serial.Serial("/dev/ttyUSB0",9600)
+		kpad = serial.Serial("/dev/ttyUSB5",9600)
 		
 		
 	def ReadLine(self):
-		global kpad
+		#global kpad
 		#buff = ""
-		#while buff.__len__() == 0:
-		#	while kpad.inWaiting() > 0:
-		#		buff = buff + kpad.read()
-			
-		#return buff
+		#temp = ""
+		#while buff.__len__() == 0 and kpad.inWaiting() >0:
+		#	buff = kpad.read()
+		#	temp = temp + buff			
+		#	buff = ""
+		#return temp
 		return kpad.read()
 
 	def SendLine(self,data):

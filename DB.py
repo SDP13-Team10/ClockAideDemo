@@ -17,8 +17,12 @@ class DB:
 		global connection
 		global cursorObj
 		global userID
-		randomHour = -1
 
+		userID = -1
+		sessionID = -1
+		name = ""
+
+		randomHour = -1
 		randomMinute = -1
 		databaseLocation = pathToDB
 		connection = sqlite3.connect(databaseLocation)
@@ -39,32 +43,38 @@ class DB:
 		row = cursorObj.fetchone()
 
 		#Authentication Failure
-		if row is None:
+		if not row:
+			print "Authentication Failed"
+			print "ID entered was : " + uid
 			userID = -1
 			name = ""
-
-		#Authentication Successful
-		if row[0] == uid:
+		else: #Authentication Successful
+			print "Authentication Successful"
+			print "ID entered was: " + uid
 			userID = uid
 			name = row[1]
+			print "Name: " + name
 			sessionID = uuid.uuid4() #Create a unique session ID
 			#Insert authentication information into DB
 			cursorObj.execute('INSERT INTO sessionLog (id,sessionStartTime,sessionID) VALUES (?,?,?)', userID, datetime.now(), sessionID)
 			connection.commit()
 
-	def isUserAuthenticated():
-		if userID == -1:
-			return false
+	def isUserAuthenticated(self):
+		global userID
+		#print userID
+		if (userID == -1):
+			return False
 		else:
-			return true
+			return True
+		#return True
 
-	def endSession():
+	def endSession(self):
 		global userID
 		cursorObj.execute('INSERT INTO sessionLog (sessionEndTime) VALUES (?)', datetime.now())
 		userID = -1
 		name = ""
 
-	def addToStudentResponseTable(qid,studentResponse):
+	def addToStudentResponseTable(self,qid,studentResponse):
 		global userID
 		global cursorObj
 		global sessionID
@@ -109,5 +119,9 @@ class DB:
 	def getQuestionID(self):
 		global questionID
 		return questionID
+
+	def getUserName(self):
+		global name
+		return name
 
 

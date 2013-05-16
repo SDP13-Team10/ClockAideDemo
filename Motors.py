@@ -11,7 +11,7 @@ class motors:
 		#global BaudRate
 		#global motorLocation
 		
-		motor = serial.Serial("/dev/ttyUSB2",9600)
+		motor = serial.Serial("/dev/ttyUSB1",9600)
 		
 		
 	def ReadLine(self):
