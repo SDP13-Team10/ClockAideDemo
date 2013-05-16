@@ -4,14 +4,14 @@
 import time	# Does not execute this command when launched from terminal
 from commands import *
 from ClockAideTime import *
-from Keypad import *
-from Motors import *
-from ClockAideSpeakTime import *
+import Keypad
+import Motors
+import SpeakTime
 
 
 
-keypad = keypad()
-motor = motors()
+keypad = Keypad.keypad()
+motor = Motors.motors()
 
 
 
@@ -23,7 +23,7 @@ def normal():
 	if comm == "SPEAK_TIME":
 		speakTime(nowHour(), nowMinute())
 		print(keypad.write(modeLookUp["normal"]))
-		keypad.flushInput()
+		#keypad.flushInput()
 		comm = ""
 		print comm
 		print(keypad.SendLine(modeLookUp["normal"]))

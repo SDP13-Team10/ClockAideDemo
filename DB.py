@@ -44,7 +44,7 @@ class DB:
 			name = ""
 
 		#Authentication Successful
-		if row[0] == uid
+		if row[0] == uid:
 			userID = uid
 			name = row[1]
 			sessionID = uuid.uuid4() #Create a unique session ID
@@ -53,7 +53,7 @@ class DB:
 			connection.commit()
 
 	def isUserAuthenticated():
-		if userID == -1
+		if userID == -1:
 			return false
 		else:
 			return true
@@ -71,9 +71,6 @@ class DB:
 		global connection
 		cursorObj.execute('INSERT INTO sessionLog (sid,qid,studentResponse) VALUES (?,?,?)', userID, qid, studentResponse)
 
-		def printDatabaseLocation(self):
-		global databaseLocation
-		print databaseLocation
 
 	def generateTime(self, difficulty=None):
 		global randomHour

@@ -2,15 +2,15 @@ import time	# Does not execute this command when launched from terminal
 from commands import *
 from ClockAideTime import *
 from questionBank import QuestionBank
-from keypad import *
-from Motors import *
+import Keypad
+import Motors
 from DB import *
 
-keypad = keypad()
-motor = motors()
+keypad = Keypad.keypad()
+motor = Motors.motors()
 
 qBank = QuestionBank(databaseLocation)
-DB clockAideDB = DB("ClockAideDB")
+clockAideDB = DB("./ClockAideDB")
 
 def read(id, sessionActive):
 	qBank.generateTime()
@@ -18,7 +18,7 @@ def read(id, sessionActive):
 	numAttempts = 0
 	#answerRight = 
 	#while sessionActive && answerWrong:
-	while (sessionActive && (numAttempts < 3)):
+	while (sessionActive and (numAttempts < 3)):
 		
 		keypad.SendLine(modeLookUp["read"])
 		motor.SendLine(modeLookUp["read"])
@@ -52,7 +52,7 @@ def read(id, sessionActive):
 				
 			#return modes[0]
 		else:
-			numAttempts++
+			numAttempts = numAttempts + 1
 			
 			clockAideDB.addToStudentResponseTable(clockAideDB.getQuestionID(), keypadTime)
 			

@@ -1,6 +1,6 @@
 import normal, read, set, auth, teacher, admin
 
-def Controller:
+def Controller():
 	mode = initialization()
 	
 	userID = 0
