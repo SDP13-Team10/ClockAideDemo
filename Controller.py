@@ -1,11 +1,18 @@
-import normal, read, set, auth, teacher, admin
+#import read, set, auth, teacher, admin, initialization
+from normal import *
+from read import *
+from set import *
+from auth import *
+from teacher import *
+from admin import *
+from initialization import *
 
 def Controller():
 	mode = initialization()
 	
 	userID = 0
 	userName = ""
-	userSession
+	userSession = -1
 	
 	while 1:
 		if mode == "NORMAL":

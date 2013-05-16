@@ -5,8 +5,10 @@ from ClockAideTime import *
 from Keypad import *
 from Motors import *
 
-keypad = keypad()
-motor = motors()
+pad = keypad()
+mtr = motors()
+mode = -1
+currentTime = -1
 
 def initialization():
 	global mode
@@ -16,8 +18,9 @@ def initialization():
 	#motor.flush()
 	
 	currentTime = datetime.datetime.now()
-	print(keypad.SendLine(currentTime.strftime("%H, %M, %S, %d, %m, %Y")))
-	print(motor.SendLine(currentTime.strftime("%H, %M, %S, %d, %m, %Y")))
+	pad.SendLine(currentTime.strftime("%H, %M, %S, %d, %m, %Y"))
+	#keypad.SendLine("12, 03, 00, 12, 12, 2003")
+	mtr.SendLine(currentTime.strftime("%H, %M, %S, %d, %m, %Y"))
 	
 	time.sleep(2)
 	

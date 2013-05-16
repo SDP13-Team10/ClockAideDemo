@@ -11,18 +11,19 @@ class motors:
 		#global BaudRate
 		#global motorLocation
 		
-		motor = serial.Serial("/dev/ttyUSB1",9600)
+		motor = serial.Serial("/dev/ttyUSB2",9600)
 		
 		
-	def ReadLine():
+	def ReadLine(self):
+		buff = ""
 		global motor
 		
 		while motor.inWaiting() > 0:
-			buff += motor.read()
+			buff = buff + motor.read()
 			
 		return buff
 		
-	def SendLine(data):
+	def SendLine(self,data):
 		global motor
 		
 		motor.write(data)
