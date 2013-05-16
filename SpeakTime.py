@@ -10,13 +10,21 @@ def speakTime(hour,minute):
 
 	hour = re.sub("^0+","",hour)
 
+	#print "Hour Entered " + hour
+	#print "Minute Entered" + minute 
+
+	minuteInteger = int(minute)
+
 	hourFile = "~/ClockAideVoiceMap/Hours/"+str(hour)+".wav"
 	if minute is "0":
 		minuteFile="~/ClockAideVoiceMap/Wildcard/oclock.wav"
-	elif minute is "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9":
+	elif minuteInteger <= 9:
+		#print "Minute is single digit"
+		#print minute
 		minuteFile="~/ClockAideVoiceMap/Minutes/O"+str(minute)+".wav"
  	else:
 		minuteFile="~/ClockAideVoiceMap/Minutes/"+str(minute)+".wav"
 
 	playVoiceMap = "mplayer %s 1>/dev/null 2>&1 " + hourFile + " " + minuteFile
+	#print playVoiceMap
 	os.system(playVoiceMap)
