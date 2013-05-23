@@ -39,7 +39,7 @@ class DB:
 		row = cursorObj.fetchone()
 
 		#Authentication Failure
-		if row is None:
+		if row[0] is None:
 			userID = -1
 			name = ""
 
@@ -54,9 +54,9 @@ class DB:
 
 	def isUserAuthenticated():
 		if userID == -1:
-			return false
+			return False
 		else:
-			return true
+			return True
 
 	def endSession():
 		global userID
@@ -107,6 +107,10 @@ class DB:
 		return timeTouple
 	
 	def getQuestionID(self):
+		global questionID
+		return questionID
+
+		def getQuestionID(self):
 		global questionID
 		return questionID
 
